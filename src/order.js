@@ -20,7 +20,10 @@ function Order(){
   };
 
   window.onpopstate = (event) => {
-    console.log(event);
+    if(location.search === '?popup=order'){
+      setIsShowPopup( true );
+      return;
+    }
     setIsShowPopup( false );
   }
 
