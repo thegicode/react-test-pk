@@ -4,24 +4,25 @@ const useState = React.useState;
 const el = React.createElement;
 
 function Order(){
-  
+
   const [isShowPopup, setIsShowPopup] = useState(false);
   const [data, setData] = useState({});
 
   function openPopup(){
-    // window.history.pushState('popup-addr', '', '/popup-addr');
+    history.pushState({popup: 'order'}, "", "?popup=order")
     setIsShowPopup( true );
   }
 
   const closePopup = (data) => {
-    // window.history.back();
+    window.history.back();
     setIsShowPopup( false );
     setData(data);
   };
 
-  // window.onpopstate = (event) => {
-  //   setIsShowPopup( false );
-  // }
+  window.onpopstate = (event) => {
+    console.log(event);
+    setIsShowPopup( false );
+  }
 
   return(
     <React.Fragment>
@@ -45,6 +46,8 @@ function Order(){
   )
 
 }
+
+
 
 function PopupContent(props) {
 
