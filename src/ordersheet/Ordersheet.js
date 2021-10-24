@@ -17,7 +17,7 @@ const el = React.createElement
 const rootEl = document.querySelector('#app1')
 const render1 = () => ReactDOM.render(el(List, store), rootEl)
 render1()
-store.subscribe(render1)
+// store.subscribe(render1)
 
 const rootEl2 = document.querySelector('#app2')
 const render2 = () => ReactDOM.render(el(Total, store), rootEl2)
