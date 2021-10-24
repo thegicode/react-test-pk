@@ -1,10 +1,16 @@
+import { updateAmount, getTotal } from './actions.js'
+
 const { useState } = React
 
-const Book = ({book}) => {
+const Book = ({ book, dispatch, index }) => {
     const [amount, setAmount] = useState(book.amount)
     const handleChange = (e) => {
-        setAmount(e.target.value)
+        const value = e.target.value
+        setAmount(value)
+        dispatch(updateAmount(index, value))
+        dispatch(getTotal())
     }
+
     return( 
         <li className="order-item">
             <p className="name">{book.name}</p>
@@ -20,19 +26,23 @@ const Book = ({book}) => {
     )
 }
 
-const List = (props) => {
-    const books = props.getState().books
+const List = (store) => {
+    const {getState, dispatch} = store
+    const books = getState().books
+
     return(
         <ul className="orders">
             { books && books.length > 0 &&
                 books.map( (book, index) => 
-                    <Book book={book} key={index} />
+                    <Book 
+                        key={index}
+                        book={book} 
+                        dispatch={dispatch} 
+                        index={index}  />
                 )
             }
         </ul>
     )
 }
-
-
 
 export default List

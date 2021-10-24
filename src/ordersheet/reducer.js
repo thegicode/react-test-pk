@@ -11,15 +11,24 @@ const INITIAL_STATE = {
             price: 10000,
             amount: 0
         }
-    ]
+    ],
+    total: 0
+
 }
-function reducer(state = INITIAL_STATE, action) {
+
+const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case 'SET_ISSHOW':
-            return {
-                ...state,
-                isShow: !state.isShow
-            }
+        case 'UPDATE_AMOUNT':
+            const {index, amount} = action
+            state.books[index].amount = amount
+            return state
+        case 'GET_TOTAL':
+            let sum = 0
+            state.books.map ( book => {
+                sum += book.price * book.amount
+            })
+            state.total = sum
+            return state
         default:
             return state
     }
