@@ -4,7 +4,7 @@ const Total = (store) => {
     return(
         <div className="total">
             <h4>합계</h4>
-            <p className="price">{total}</p>
+            <p className="price">{total}원</p>
         </div>
     )
 }

@@ -5,9 +5,9 @@ const { useState } = React
 const Book = ({ book, dispatch, index }) => {
     const [amount, setAmount] = useState(book.amount)
     const handleChange = (e) => {
-        const value = e.target.value
-        setAmount(value)
-        dispatch(updateAmount(index, value))
+        const amount = e.target.value
+        setAmount(amount)
+        dispatch(updateAmount(index, amount))
         dispatch(getTotal())
     }
 
@@ -17,7 +17,7 @@ const Book = ({ book, dispatch, index }) => {
             <p>{book.price}원</p>
             <label className="amount">
                 <span className="__text">수량</span>
-                <input type="number" 
+                <input type="number" min="0"
                     className="__input" 
                     value={amount}
                     onChange={handleChange} />
