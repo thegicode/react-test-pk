@@ -3,6 +3,7 @@ import reducer from './reducer.js'
 
 import List from './List.js'
 import Total from './Total.js'
+import TotalVanila from './TotalVanila.js'
 
 const store = Redux.createStore(reducer)
 
@@ -22,3 +23,13 @@ const rootEl2 = document.querySelector('#app2')
 const render2 = () => ReactDOM.render(el(Total, store), rootEl2)
 render2()
 store.subscribe(render2)
+
+const rootEl3 = document.querySelector('#app3')
+const render3 = () => {
+    window.requestAnimationFrame( () => {
+        rootEl3.innerHTML = TotalVanila(store)
+    })
+}
+render3()
+store.subscribe(render3)
+
