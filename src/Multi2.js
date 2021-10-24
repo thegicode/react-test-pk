@@ -1,23 +1,16 @@
 'use strict';
 
-import store from './reducer.js'
+const Multi2 = (props) => {
 
-const { useState } = React
-
-const Multi2 = () => {
-
-    const [isShow, setIsShow] = useState(store.getState().isShow)
-    const handleClick = () => {
-        store.dispatch({ type: 'SET_ISSHOW' })
-        setIsShow(store.getState().isShow)
-    }
+    const handleShow = props.handleShow
+    const isShow = props.isShow()
 
     return(
         <React.Fragment>
 
             <h2>Multi2</h2>
 
-            <button onClick={handleClick}>Click</button>
+            <button onClick={handleShow}>Click</button>
 
             { isShow && 
                 <div>Multi component test</div>
