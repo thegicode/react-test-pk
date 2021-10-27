@@ -36,7 +36,8 @@ const render3 = () => {
 }
 render3()
 store.subscribe(render3)
-// 간편하다. 빠르거나 보통이거나
+// 빠르거나 보통이거나
+
 
 const rootEl4 = document.querySelector('#app4')
 const render4 = () => {
