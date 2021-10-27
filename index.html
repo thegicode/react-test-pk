@@ -1,41 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Add React in One Minute</title>
+<head>
+<meta charset="UTF-8" />
+    <title>Reactjs-unpkg-lab</title>
     <style>
-      a {
-        display: block;
-      }
+
+        body {
+            margin: 0 1rem;
+        }
+        section {
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
 
-    <h2>Add React in One Minute</h2>
-    <p>This page demonstrates using React with no build tooling.</p>
-    <p>React is loaded as a script tag.</p>
+    <h1>Labs</h1>
 
-    <!-- We will put our React component inside this div. -->
-    <div id="like_button_container"></div>
+    <section>
+        <h3>Like</h3>
+        <a href="/html/like.html">Like</a>
+    </section>
 
-    <!-- Load React. -->
-    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <section>
+        <h3>List(useState)</h3>
+        <a href="/html/list.html">List</a>
+    </section>
 
-     <!-- Don't use this in production: -->
-    <!-- <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+    <section>
+        <h3>Count(useEffect)</h3>
+        <a href="/html/count.html">Count</a>
+    </section>
 
-    <!-- Load our React component. -->
-    <script src="./lib/like_button.js"></script>
+    <section>
+        <h3>Order(popup)</h3>
+        <a href="/html/order.html">Order</a>
+    </section>
 
-    <hr>
-    
-    <h3>두 컴포턴트간의 상태 공유(Redux)</h3>
-    <a href="/multi.html">Multi</a>
-    <a href="/ordersheet.html">Order Sheet</a>
+    <section>
+        <h3>두 컴포턴트간의 상태 공유(Redux)</h3>
+        <a href="/html/multi.html">Multi</a>
+        <a href="/html/ordersheet.html">Order Sheet</a>
+    </section>
 
-
-
-  </body>
+</body>
 </html>
