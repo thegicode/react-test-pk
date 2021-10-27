@@ -10,12 +10,47 @@
   </head>
   <body>
 
+    <!-- List -->
     <div id="app1"></div>
+
+    <!-- total -->
     <div id="app2"></div>
+
     <hr>
+
     <div id="app3"></div>
 
-    <script type="module" src="./lib/ordersheet/ordersheet.js"></script>
+    <hr>
 
+    <div id="app4">
+        <div class="total">
+            <h4>합계(Vanila JS - only price)</h4>
+            <p class="price" data-text="price"></p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="app5"></div>
+
+    <hr>
+
+    <div id="app6">
+        <div></div>
+    </div>
+
+    <!-- template -->
+    <template data-template="total">
+        <div class="total">
+            <h4>합계(Vanila JS - applyDiff, fragment)</h4>
+            <p class="price">
+                <span data-text="price"></span>
+                원
+            </p>
+        </div>
+    </template>
+
+
+    <script type="module" src="./lib/ordersheet/ordersheet.js"></script>
   </body>
 </html>
