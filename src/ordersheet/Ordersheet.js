@@ -64,6 +64,7 @@ const render5 = () => {
 }
 render5()
 store.subscribe(render5)
+// 가장 느림
 
 
 const rootEl6 = document.querySelector('#app6')
