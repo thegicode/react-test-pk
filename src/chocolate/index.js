@@ -7,10 +7,17 @@ function Chocolate() {
     const [isTypeA, chaneType] = useState(true)
 
     useEffect( () => {
-        console.log(location.hash)
-        if (location.hash !== '#a') {
-            chaneType(false)
-        }
+        hanleType()
+    })
+
+    function hanleType() {
+        const hash = location.hash
+        const isA = (hash === '#a' || hash === '') ? true : false
+        chaneType(isA)
+    }
+
+    window.addEventListener('hashchange', () => {
+        hanleType()
     })
 
     return (
