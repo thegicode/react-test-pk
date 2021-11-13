@@ -4,7 +4,7 @@ const {useState, useEffect} = React
 
 function Chocolate() {
 
-    const [isTypeA, chaneType] = useState(true)
+    const [isTypeDefault, chaneType] = useState(true)
 
     useEffect( () => {
         hanleType()
@@ -12,8 +12,8 @@ function Chocolate() {
 
     function hanleType() {
         const hash = location.hash
-        const isA = (hash === '#a' || hash === '') ? true : false
-        chaneType(isA)
+        const isDefault = (hash === '#a' || hash === '') ? true : false
+        chaneType(isDefault)
     }
 
     window.addEventListener('hashchange', () => {
@@ -24,7 +24,7 @@ function Chocolate() {
         <div>
             <h1>Chocolate</h1>
             <A />
-            { isTypeA === true ?
+            { isTypeDefault === true ?
                 <React.Fragment>
                     <B />
                     <C />
