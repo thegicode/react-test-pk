@@ -10,12 +10,18 @@ function Chocolate() {
         hanleType()
     })
 
-    function hanleType() {
+    const hanleType = () => {
         const hash = location.hash
         const isDefault = (hash === '#a' || hash === '') ? true : false
         chaneType(isDefault)
     }
 
+    const handleClick = (e) => {
+        const hash = location.hash
+        const newHash = (hash === '#a' || hash === '') ? 'b' : 'a'
+       location.hash = newHash
+    }
+ 
     window.addEventListener('hashchange', () => {
         hanleType()
     })
@@ -35,6 +41,7 @@ function Chocolate() {
                     <E />
                 </React.Fragment>
             } 
+            <button onClick={handleClick}>Hash Change</button>
         </div>
     )
 }
