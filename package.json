@@ -4,9 +4,10 @@
   "description": "react test",
   "main": "like_button.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx babel --watch src --out-dir lib --presets react-app/prod",
-    "server": "npx http-server"
+    "server": "npx http-server",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,9 @@
   "homepage": "https://github.com/thegicode/react-test-pk#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-jest": "^27.3.1",
     "babel-preset-react-app": "^3.1.2",
-    "http-server": "^14.0.0"
+    "http-server": "^14.0.0",
+    "jest": "^27.3.1"
   }
 }

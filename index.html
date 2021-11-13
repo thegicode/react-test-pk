@@ -4,19 +4,47 @@
 <meta charset="UTF-8" />
     <title>Reactjs-unpkg-lab</title>
     <style>
-
         body {
-            margin: 0 1rem;
+            margin: 0;
         }
-        section {
-            padding: 1rem 0;
-            border-bottom: 1px solid #ddd;
+        h1 {
+            margin: 1rem;
+            color: rgba(0, 0, 0, 0.9);
         }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            padding: 1rem 2rem;
+            border-bottom: dashed 1px rgba(0, 0, 0, 0.1);
+        }
+        /* li:nth-child(even) {
+            background-color: rgba(43, 145, 3, 0.05);
+        } */
 
+        h3 {
+            margin: 0 0 10px 0;
+            color: rgba(0, 0, 0, 0.8);
+        }
+        
         a {
-            display: block;
-            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            margin: 5px 0 0;
             text-decoration: none;
+            color: rgba(43, 145, 3, 1);
+        }
+        a:before {
+            content: '';
+            display: block;
+            width: 7px;
+            height: 3px;
+            margin-right: 7px;
+            margin-top: -2px;
+            border-radius: 5px;
+            background-color: rgba(43, 145, 3, 0.5);
         }
         a:hover {
             text-decoration: underline;
@@ -25,33 +53,30 @@
 </head>
 <body>
 
-    <h1>Labs</h1>
-
-    <section>
-        <h3>Like</h3>
-        <a href="/html/like.html">Like</a>
-    </section>
-
-    <section>
-        <h3>List(useState)</h3>
-        <a href="/html/list.html">List</a>
-    </section>
-
-    <section>
-        <h3>Count(useEffect)</h3>
-        <a href="/html/count.html">Count</a>
-    </section>
-
-    <section>
-        <h3>Order(popup)</h3>
-        <a href="/html/order.html">Order</a>
-    </section>
-
-    <section>
-        <h3>두 컴포턴트간의 상태 공유(Redux)</h3>
-        <a href="/html/multi.html">Multi</a>
-        <a href="/html/ordersheet.html">Order Sheet</a>
-    </section>
+    <h1>ReactJs unpkg labs</h1>
+    <ul>
+        <li>
+            <h3>Like</h3>
+            <a href="/html/like.html">Like</a>
+        </li>
+        <li>
+            <h3>List(useState)</h3>
+            <a href="/html/list.html">List</a>
+        </li>
+        <li>
+            <h3>Count(useEffect)</h3>
+            <a href="/html/count.html">Count</a>
+        </li>
+        <li>
+            <h3>Order(popup)</h3>
+            <a href="/html/order.html">Order</a>
+        </li>
+        <li>
+            <h3>두 컴포턴트간의 상태 공유(Redux)</h3>
+            <a href="/html/multi.html">Multi</a>
+            <a href="/html/ordersheet.html">Order Sheet</a>
+        </li>
+    </ul>
 
 </body>
 </html>
