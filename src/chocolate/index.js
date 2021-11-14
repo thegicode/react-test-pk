@@ -1,12 +1,15 @@
 
-import Chocolate from "./chocolate.js"
+import Chocolate from "./Chocolate.js"
+import Chocolate2 from "./Chocolate2.js"
 
-const { BrowserRouter, Route } = ReactRouterDOM
+const { BrowserRouter, Route, Switch, useParams } = ReactRouterDOM
 
 const App = () => (
     <BrowserRouter>
-        <Route path="/html/chocolate/page1/" component={Chocolate} />
-        <Route path="/html/chocolate/page2/" component={Chocolate} />
+        <Switch>
+            <Route path="/html/chocolate/page1/" component={Chocolate} />
+            <Route path="/html/chocolate/page2/" component={Chocolate2} />
+        </Switch>
     </BrowserRouter>
 )
 
