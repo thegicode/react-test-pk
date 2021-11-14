@@ -1,16 +1,51 @@
+import {A, B, C, D, E} from './components.js'
 
-import Chocolate from "./Chocolate.js"
-import Chocolate2 from "./Chocolate2.js"
+const {useState, useEffect} = React
 
-const { BrowserRouter, Route, Switch, useParams } = ReactRouterDOM
+function Chocolate() {
 
-const App = () => (
-    <BrowserRouter>
-        <Switch>
-            <Route path="/html/chocolate/page1/" component={Chocolate} />
-            <Route path="/html/chocolate/page2/" component={Chocolate2} />
-        </Switch>
-    </BrowserRouter>
-)
+    const [isTypeDefault, chaneType] = useState(true)
 
-ReactDOM.render(<App />, document.querySelector('#chocolate'));
+    useEffect( () => {
+        hanleType()
+    })
+
+    const hanleType = () => {
+        const hash = location.hash
+        const isDefault = (hash === '#a' || hash === '') ? true : false
+        chaneType(isDefault)
+    }
+
+    const handleClick = (e) => {
+        const hash = location.hash
+        const newHash = (hash === '#a' || hash === '') ? 'b' : 'a'
+       location.hash = newHash
+    }
+ 
+    window.addEventListener('hashchange', () => {
+        hanleType()
+    })
+
+    return (
+        <div>
+            <h1>Chocolate</h1>
+            <A />
+            { isTypeDefault === true ?
+                <React.Fragment>
+                    <B />
+                    <C />
+                </React.Fragment>
+                :
+                <React.Fragment>
+                    <D />
+                    <E />
+                </React.Fragment>
+            } 
+            <button onClick={handleClick}>Hash Change</button>
+        </div>
+    )
+}
+
+const el = React.createElement
+const domContainer = document.querySelector('#chocolate')
+ReactDOM.render(el(Chocolate), domContainer)
